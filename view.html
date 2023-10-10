@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>메뉴 상세정보</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            .form-group span {
+                font-size: 14px;
+            }
+            .btn-primary {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>메뉴 상세정보</h1>
+        <form action="view.html" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="itemName">메뉴:</label>
+                <span id="itemName">삼계탕</span>
+            </div>
+
+            <div class="form-group">
+                <label for="itemPrice">식당이름:</label>
+                <span id="itemPrice">복이네</span>
+            </div>
+
+            <div class="form-group">
+                <label for="price">가격:</label>
+                <span id="price">12000원</span>
+            </div>
+
+            <div class="form-group">
+                <label for="sorting">분류:</label>
+                <span id="sorting">한식</span>
+            </div>
+
+            <div class="form-group">
+                <label for="preference">선호도:</label>
+                <span id="preference">상</span>
+            </div>
+
+            <div class="form-group">
+                <label for="purchaseDate">하루 판매량:</label>
+                <span id="purchaseDate">4개</span>
+            </div>
+
+            <input type="button" value="수정" class="edit-button" onclick="redirectToEditPage()">
+            <input type="button" value="삭제" class="delete-button" onclick="confirmDelete()">
+            <input type="button" value="뒤로" class="back-button" onclick="confirmBack()">
+        </form>
+    </div>
+    <script>
+        function redirectToEditPage() {
+            window.location.href = "edit.html?id=2"; 
+        }
+
+        function confirmDelete() {
+            var result = confirm("삭제하시겠습니까?");
+            if (result) {
+                alert("삭제되었습니다.");
+                window.location.href = "index.html"; 
+            } else {
+                alert("삭제가 취소되었습니다.");
+            }
+        }
+
+        function confirmBack(){
+            window.location.href = "index.html"; 
+        }
+    </script>
+</body>
+</html>

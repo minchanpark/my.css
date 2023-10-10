@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>메뉴 편집</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control {
+            width: 90%;
+            padding: 10px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background-color: #0000b3;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #ccc;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #999;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                max-width: 100%;
+                padding: 10px;
+            }
+            .btn-primary, button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>메뉴 편집</h1>
+        <form action="view.html" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="itemName">식당이름:</label>
+                <input type="text" id="itemName" name="itemName" value="삼계탕" required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="itemPrice">가격:</label>
+                <input type="text" id="itemPrice" name="itemPrice" value="12000원" required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="itemQuantity">분류:</label>
+                <input type="text" id="itemQuantity" name="itemQuantity" value="한식" required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="preference">선호도:</label>
+                <input type="text" id="preference" name="preference" value="상" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="purchaseDate">하루 판매량:</label>
+                <input type="text" id="purchaseDate" name="purchaseDate" value="4개" required class="form-control">
+            </div>
+
+            <input type="submit" value="수정" class="btn-primary" onclick="confirmEdit()">
+        </form>
+        <button onclick="cancelEdit()">취소</button>
+    </div>
+    <script>
+        function validateForm() {
+            var itemName = document.getElementById("itemName").value;
+            var itemPrice = document.getElementById("itemPrice").value;
+            var itemQuantity = document.getElementById("itemQuantity").value;
+            var purchaseDate = document.getElementById("purchaseDate").value;
+
+            if (itemName === "" || itemPrice === "" || itemQuantity === "" || purchaseDate === "") {
+                alert("모든 필수 항목을 입력하세요.");
+                return false;
+            }
+            return true;
+        }
+
+        function confirmEdit() {
+            if (confirm("상품을 수정할까요?")) {
+                alert("상품이 수정되었습니다.");
+                if(true){
+                window.location.href = "index.html";
+                }
+            }
+        }
+
+        function cancelEdit() {
+            alert("상품 수정이 취소되었습니다.");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

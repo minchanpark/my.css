@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>음식 메뉴 소개 사이트</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 5px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        a {
+            text-decoration: none;
+            color: #0078d4;
+        }
+        .add-button {
+            background-color: #0078d4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 15px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-bottom: 10px;
+            float: right;
+        }
+        .search-container {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .search-input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-button {
+            background-color: #0078d4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .edit-button, .delete-button {
+            cursor: pointer;
+            background-color: #0078d4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-right: 5px;
+        }
+
+            @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .add-button {
+                float: none;
+                margin: 5px auto;
+                display: block;
+                width: 24%;
+                margin-left: 230px;
+            }
+            .search-container {
+                text-align: center;
+            }
+            .search-input {
+                width: 80%;
+                margin-bottom: 5px;
+            }
+            .search-button {
+                width: 15%;
+                margin-left: 290px;
+            }
+            table {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>메뉴 소개</h1>
+    </header>
+    <div class="container">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="검색어를 입력하세요">
+            <button class="search-button">검색</button>
+        </div>
+        <a class="add-button" href="add.html">메뉴 추가</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>메뉴</th>
+                    <th>식당이름</th>
+                    <th>가격</th>
+                    <th>분류</th>
+                    <th>선호도</th>
+                    <th>하루 판매량</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><a href="view.html?id=1">삼계탕</a></td>
+                    <td>복이네</td>
+                    <td>12000원</td>
+                    <td>한식</td>
+                    <td>상</td>
+                    <td>4개</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="view.html?id=2">감자탕</a></td>
+                    <td>누른마을</td>
+                    <td>10000원</td>
+                    <td>한식</td>
+                    <td>중</td>
+                    <td>5개</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="view.html?id=2">자장면</a></td>
+                    <td>호야네</td>
+                    <td>8000원</td>
+                    <td>중식</td>
+                    <td>상</td>
+                    <td>8개</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="view.html?id=2">짬뽕</a></td>
+                    <td>이서방반점</td>
+                    <td>9000원</td>
+                    <td>중식</td>
+                    <td>중</td>
+                    <td>10개</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><a href="view.html?id=2">우동</a></td>
+                    <td>우울할때</td>
+                    <td>7000원</td>
+                    <td>중식</td>
+                    <td>중</td>
+                    <td>4개</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><a href="view.html?id=2">비빔밥</a></td>
+                    <td>한식기행</td>
+                    <td>10000원</td>
+                    <td>한식</td>
+                    <td>하</td>
+                    <td>3개</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><a href="view.html?id=2">갈비탕</a></td>
+                    <td>갈비맛집</td>
+                    <td>13000원</td>
+                    <td>한식</td>
+                    <td>최상</td>
+                    <td>4개</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><a href="view.html?id=2">간장게장</a></td>
+                    <td>게장이야기</td>
+                    <td>20000원</td>
+                    <td>한식</td>
+                    <td>상</td>
+                    <td>4개</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td><a href="view.html?id=2">간장 찜닭</a></td>
+                    <td>안동식당</td>
+                    <td>23000원</td>
+                    <td>한식</td>
+                    <td>하</td>
+                    <td>2개</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td><a href="view.html?id=2">깐풍기</a></td>
+                    <td>홍이네</td>
+                    <td>30000원</td>
+                    <td>중식</td>
+                    <td>중</td>
+                    <td>1개</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
